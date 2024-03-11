@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "workspaces": [
+    "presentation-standardisation-tips-in-software-teams"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
