@@ -29,7 +29,10 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
 
-      <a href='https://inigomarquinez.github.io/slides/presentation-standardisation-tips-in-software-teams/'>
+      {/* <a href='https://inigomarquinez.github.io/slides/presentation-standardisation-tips-in-software-teams/'>
+        Standardisation tips in software teams
+      </a> */}
+      <a href='/presentations/standardisation-tips-in-software-teams/'>
         Standardisation tips in software teams
       </a>
     </>
