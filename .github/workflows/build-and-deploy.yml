@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   build-and-deploy:
-    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+    concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     steps:
       - name: 🔐 Harden Runner
@@ -34,9 +34,10 @@ jobs:
           npm ci
           npm run build
           npm run build --workspaces --if-present
+          mv presentations/standardisation-tips-in-software-teams/dist dist
 
       - name: 🚀 Deploy to GitHub pages
         uses: JamesIves/github-pages-deploy-action@65b5dfd4f5bcd3a7403bbc2959c144256167464e # v4.5.0
         with:
-          folder: dist # The folder the action should deploy.
+          folder: dist
 
