@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "workspaces": [
-    "presentation-standardisation-tips-in-software-teams"
+    "presentations/*"
   ],
   "scripts": {
     "dev": "vite",
