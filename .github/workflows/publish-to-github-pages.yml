@@ -24,7 +24,14 @@ jobs:
       - name: 🔐 Harden Runner
         uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
         with:
-          egress-policy: audit
+          disable-sudo: true
+          egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+            fonts.googleapis.com:443
+            fonts.gstatic.com:443
+            github.com:443
+            registry.npmjs.org:443
 
       - name: 🛎️ Checkout
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
