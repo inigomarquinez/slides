@@ -1,16 +1,11 @@
-import fs from 'fs';
 import path from 'path'; 
 
 import RevealWrapper from "@/components/revealWrapper/revealWrapper";
+import readSubfolders from '@/utils/readSubfolders';
 
-const dataDirectory = path.join(process.cwd(), 'src', 'presentations');
-
-// Read the subfolders under the "presentations" folder
-// and generate the static paths for the pages.
 export async function generateStaticParams() {
-  return fs.readdirSync(dataDirectory, { withFileTypes: true })
-    .filter(dirent => dirent.isDirectory())
-    .map(dirent => ( { id: dirent.name }));
+  const folders = readSubfolders(path.join(process.cwd(), 'src', 'presentations'));
+  return folders.map(folder => ({ id: folder.name }));
 }
 
 export default async function Presentation({ params }) {
